@@ -1,9 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.ProjectY" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/DungeonTowerHex1</item>
-        <item name="colorPrimaryDark">@color/DungeonTowerHex4</item>
-        <item name="colorAccent">@color/white</item>
-    </style>
-</resources>

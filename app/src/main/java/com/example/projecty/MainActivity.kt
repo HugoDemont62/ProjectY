@@ -4,16 +4,24 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Window
+import android.view.WindowManager
 
 class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.chargin)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN, //Set status bar to false
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+        setContentView(R.layout.activity_chargin)
 
-            val handler = Handler(Looper.getMainLooper())
-            handler.postDelayed({
-                setContentView(R.layout.activity_main)
-            }, 3000)
-        }
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({
+            setContentView(R.layout.activity_main)
+        }, 4000)
+
+    }
 }
