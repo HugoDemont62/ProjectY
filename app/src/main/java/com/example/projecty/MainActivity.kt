@@ -1,6 +1,5 @@
 package com.example.projecty
 
-import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -8,7 +7,6 @@ import android.os.Looper
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,12 +24,22 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed({
             setContentView(R.layout.activity_main)
 
+            val btnPlay: Button = findViewById(R.id.playBtnId)//Selection du BTN pour play
+            val btnCredits: Button = findViewById(R.id.creditsBtnId)//Selection du BTN pour credits
+            val btnExit: Button = findViewById(R.id.exitBtnId)//Selection du BTN pour exit
 
-            val btnExit: Button = findViewById(R.id.exitBtnId)                                          //Selection du BTN pour exit
-            btnExit.setOnClickListener {
-                finish()                                                                               // Fermer l'activité
+            btnPlay.setOnClickListener {
+                println("Game View")// Call game View
             }
-        }, 4000)
+
+            btnCredits.setOnClickListener {
+                setContentView(R.layout.activity_credits)// Call Activity credits
+            }
+
+            btnExit.setOnClickListener {
+                finish()// Fermer l'activity
+            }
+        }, 3000)
 
 
     }
